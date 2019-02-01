@@ -15,26 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('welcome', function () {
-
-    return "Hello World!";
-
-});
-
-Route::post('welcome', function () {
-
-    return "Hello World!";
-
-});
-
-Route::match(['get', 'post'], 'match', function () {
-
-    return "Matches GET and POST";
-
-});
-
-Route::any('any', function () {
-
-    return "Matches any method";
-
+Route::get('welcome/{id?}', function ($id = null) {
+    return "Hello $id";
 });
